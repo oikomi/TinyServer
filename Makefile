@@ -1,5 +1,6 @@
 CC=gcc
-CFLAGS=-O2 -W -Werror -Wall
+CFLAGS=-O2 -W -Werror -Wall --std=c99 -D_GNU_SOURCE -I/usr/local/include -L/usr/local/lib -lmongoc
+
 PROG=tinyserver
 OBJS=tinyserver.o
 

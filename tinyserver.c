@@ -29,6 +29,11 @@
 #include <pthread.h>
 #include <errno.h>
 
+//#include "mongo.h"
+#include <mongo.h> 
+#include <bson.h>
+
+
 
 #define MAX_EPOLL_FD 4096
 #define MAX_BUF_SIZE (1<<20)
@@ -169,6 +174,31 @@ void exit_hook(int number)
         close(listen_fd);
         g_shutdown_flag=1;    
         printf(">> [%d]will shutdown...[%d]\n", getpid(),number);
+}
+
+
+int mongo_conn()
+{
+
+   // mongo conn[1];
+   //int status = mongo_client( conn, "127.0.0.1", 27017 );
+
+   // if( status != MONGO_OK ) {
+   //    switch ( conn->err ) {
+   //       case MONGO_CONN_NO_SOCKET:
+   //           printf( "no socket\n" );
+   //           return 1;
+   //       case MONGO_CONN_FAIL:
+   //           printf( "connection failed\n" );
+   //           return 1;
+   //       case MONGO_CONN_NOT_MASTER:
+   //           printf( "not master\n" );
+   //           return 1;
+   //    }
+   // }
+   printf( "connection done\n");
+
+   return 0;
 }
 
 
